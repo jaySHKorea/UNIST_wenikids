@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GpsActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/my_location"
+            android:layout_width="166dp"
+            android:layout_height="53dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/common_google_signin_btn_text_dark_default"
+            android:elevation="15dp"
+            android:src="@drawable/location"
+            android:text="My location" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

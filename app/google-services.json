@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "442745096508",
+    "firebase_url": "https://wenikids.firebaseio.com",
+    "project_id": "wenikids",
+    "storage_bucket": "wenikids.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442745096508:android:46fe4d4babeeef52",
+        "android_client_info": {
+          "package_name": "com.wenikids.knuprime110.wenikids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442745096508-bvmn1ef5lf56mk556b7l7gjmronemkup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOcvQOft98upckEJnzyalAsvfQ1DDVhMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
