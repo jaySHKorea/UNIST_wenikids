@@ -20,8 +20,9 @@
         */
  package com.wenikids.knuprime110.wenikids;
 
+ import android.os.AsyncTask;
  import android.content.Intent;
- import android.media.Image;
+ import android.app.ProgressDialog;
  import android.os.Bundle;
  import android.support.annotation.NonNull;
  import android.support.design.widget.BottomNavigationView;
@@ -31,20 +32,23 @@
  import android.widget.ImageButton;
  import android.widget.TextView;
  import android.widget.Toast;
-
- import com.kt.gigaiot_sdk.GigaIotOAuth;
- import com.kt.gigaiot_sdk.data.*;
+ import java.util.ArrayList;
+ import java.io.IOException;
 
  import com.google.firebase.auth.FirebaseAuth;
  import com.google.firebase.auth.FirebaseUser;
+ import com.google.android.gms.gcm.GoogleCloudMessaging;
 
  public class MainActivity extends AppCompatActivity {
+     //GCM 등록키,사용자 일련번호
+     private String AregId,mbrSeq;
      //이메일 비밀번호 로그인 모듈 변수
      private FirebaseAuth mAuth;
      //현재 로그인 된 유저 정보를 담을 변수
      private FirebaseUser currentUser;
 
      private TextView mTextMessage;
+     private GoogleCloudMessaging mGcm;
 
      private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
              = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -54,7 +58,7 @@
 
              switch (item.getItemId()) {
                  case R.id.my_account:
-                     Toast.makeText(MainActivity.this,currentUser.getEmail(), Toast.LENGTH_SHORT).show();
+                     Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
                      return true;
                  case R.id.GPS:
                      startActivity(new Intent(MainActivity.this, GpsActivity.class));
@@ -79,7 +83,7 @@
          navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-         ImageButton logoutBtn = (ImageButton)findViewById(R.id.LogoutButton);
+         ImageButton logoutBtn = (ImageButton) findViewById(R.id.LogoutButton);
          logoutBtn.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -88,19 +92,6 @@
              }
          });
 
-
-         ImageButton platformBtn = (ImageButton)findViewById(R.id.PlatformButton);
-         platformBtn.setOnClickListener(new View.OnClickListener(){
-             @Override
-             public void onClick(View v) {
-                 String token = null;
-                 GigaIotOAuth gigaIotOAuth = new GigaIotOAuth("SbA0Otp0pdfSiTqm","s384MfGRivdHTYiJ");
-                 GiGaIotOAuthResponse response = gigaIotOAuth.loginWithPassword("sereng5436", "sss25867@");
-                 token = response.getMessage();
-                         //response.getAccessToken();
-                 Toast.makeText(MainActivity.this,token+": Access token 확인",Toast.LENGTH_SHORT).show();
-             }
-         });
      }
 
 
@@ -109,7 +100,7 @@
          super.onStart();
          // Check if user is signed in (non-null) and update UI accordingly.
          currentUser = mAuth.getCurrentUser();
-         if(currentUser == null){
+         if (currentUser == null) {
              startActivity(new Intent(MainActivity.this, LoginActivity.class));
              finish();
          }
@@ -122,3 +113,4 @@
      }
 
  }
+

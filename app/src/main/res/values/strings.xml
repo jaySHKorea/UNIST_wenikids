@@ -3,4 +3,5 @@
     <string name="selection_home" />
     <string name="selection_weekly_box_office" />
     <string name="selection_daily_box_office" />
+    <string name="common_wait">잠시만 기다려주세요</string>
 </resources>

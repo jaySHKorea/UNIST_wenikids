@@ -1,11 +1,17 @@
 package com.wenikids.knuprime110.wenikids;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.wenikids.knuprime110.wenikids.R;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
         import android.support.annotation.NonNull;
         import android.support.v7.app.AppCompatActivity;
-        import android.view.View;
+import android.util.Log;
+import android.view.View;
         import android.widget.ImageButton;
         import android.widget.EditText;
         import android.widget.TextView;
@@ -22,6 +28,8 @@ import android.os.Bundle;
         import com.google.firebase.auth.FirebaseAuthInvalidUserException;
         import com.google.firebase.auth.FirebaseUser;
 
+import java.io.IOException;
+import android.graphics.Typeface;
 public class LoginActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener{
 
     //이메일 비밀번호 로그인 모듈 변수
@@ -29,12 +37,12 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     //현재 로그인 된 유저 정보를 담을 변수
     private FirebaseUser currentUser;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance(); //이메일 비밀번호 로그인 모듈 변수
+
 
         //이메일
         final EditText emailTxt = (EditText)findViewById(R.id.Id);
@@ -134,5 +142,4 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
             finish();
         }
     }
-
     }

@@ -13,14 +13,14 @@ public class ApiConstants {
     public static final String MSG_CONNECT_TIMEOUT  = "ConnectTimeout";
     public static final String MSG_UNKNOWN          = "unknown error : ";
 
-    //Open API 변경
-    public static final String OPEN_API_AUTH_HOST_ADDRESS = "http://iotmakers.olleh.com";
 
-    public static final String OPEN_API_HOST_ADDRESS = "http://iotmakers.olleh.com/api/v1";  //API-GW host
+    public static final String OPEN_API_AUTH_HOST_ADDRESS = "https://iotmakers.kt.com";
 
-    public static final String OPEN_API_CORE_HOST = "http://iotmakers.olleh.com/coreapi/v1";   //API-GW event host
+    public static final String OPEN_API_HOST_ADDRESS = "http://iotmakers.kt.com/api/v1";  //API-GW host
 
-    public static final String OPEN_API_PUSH_HOST = "http://iotmakers.olleh.com/pushapi/v1";  //API-GW push host
+    public static final String OPEN_API_CORE_HOST = "http://iotmakers.kt.com/coreapi/v1";   //API-GW event host
+
+    public static final String OPEN_API_PUSH_HOST = "http://iotmakers.kt.com/pushapi/v1";  //API-GW push host
 
 
     //OAuth API
