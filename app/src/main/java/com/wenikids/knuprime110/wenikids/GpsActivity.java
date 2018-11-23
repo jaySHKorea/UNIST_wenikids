@@ -64,23 +64,26 @@ public class GpsActivity extends AppCompatActivity{
 
         try{
             MapsInitializer.initialize(this);
+            setNewBusStop(35.574404,129.189539);
+            requestMyLocation();
 
         }catch (Exception e){
             e.printStackTrace();
         }
 
+        /*
         ImageButton button = (ImageButton)findViewById(R.id.my_location);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestMyLocation();
                 setNewBusStop(35.909751,128.614296);
                 setNewBusStop( 35.905107,128.608049);
                 setNewBusStop(35.906532,128.614400);
                 setNewBusStop(35.914214,128.617277);
             }
         });
-
+*/
+        /*
         ImageButton back = (ImageButton)findViewById(R.id.back_Gps);
         back.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -89,7 +92,7 @@ public class GpsActivity extends AppCompatActivity{
                 finish();
             }
         });
-
+*/
         mSensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
 
         boolean sideBottom = true;
@@ -212,7 +215,9 @@ public class GpsActivity extends AppCompatActivity{
             while ( i < count) {
                 Bus = new MarkerOptions().position(new LatLng(BusStop[i][0], BusStop[i][1]));
                 Bus.icon(BitmapDescriptorFactory.fromResource(R.drawable.busstop));
-                Bus.title((i+1)+"번째 정류장");
+                if ( i == 0 ) Bus.title("유니스트 세븐일레븐 대학생회관점\n");
+                Bus.snippet("#분식 #친구 #간단식");
+                //Bus.title((i+1)+"번째 정류장");;
                 map.addMarker(Bus);
                 i++;
             }

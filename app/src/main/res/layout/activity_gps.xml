@@ -18,26 +18,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <ImageButton
-            android:id="@+id/my_location"
-            android:layout_width="143dp"
-            android:layout_height="41dp"
-            android:layout_centerHorizontal="true"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:elevation="15dp"
-            android:src="@drawable/location"
-            android:text="My location" />
-
-        <ImageButton
-            android:id="@+id/back_Gps"
-            android:layout_width="59dp"
-            android:layout_height="60dp"
-            android:layout_alignBottom="@id/map"
-            android:layout_alignParentEnd="true"
-            android:background="#00000000"
-            android:elevation="15dp"
-            android:src="@drawable/back"
-            android:text="back" />
-
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

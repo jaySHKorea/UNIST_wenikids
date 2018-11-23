@@ -37,6 +37,8 @@ public class LoginActivity extends AppCompatActivity implements  GoogleApiClient
     //현재 로그인 된 유저 정보를 담을 변수
     private FirebaseUser currentUser;
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

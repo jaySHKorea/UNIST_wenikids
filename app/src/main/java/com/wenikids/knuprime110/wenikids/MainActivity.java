@@ -57,13 +57,13 @@
          public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
              switch (item.getItemId()) {
-                 case R.id.my_account:
+                 case R.id.my_page:
                      Toast.makeText(MainActivity.this, currentUser.getEmail(), Toast.LENGTH_SHORT).show();
                      return true;
                  case R.id.GPS:
                      startActivity(new Intent(MainActivity.this, GpsActivity.class));
                      return true;
-                 case R.id.Students:
+                 case R.id.my_list:
                      startActivity(new Intent(MainActivity.this, StudentActivity.class));
                      return true;
              }

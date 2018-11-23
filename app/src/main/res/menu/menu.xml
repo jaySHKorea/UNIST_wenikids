@@ -2,20 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/my_account"
+        android:id="@+id/my_page"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@android:drawable/ic_dialog_info"
-        android:title="my Account" />
+        android:title="MY PAGE" />
     <item
         android:id="@+id/GPS"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_dialog_map"
         android:title="GPS" />
     <item
-        android:id="@+id/Students"
+        android:id="@+id/my_list"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@android:drawable/ic_dialog_dialer"
-        android:title="Students" />
+        android:title="MY DINING" />
 </menu>
